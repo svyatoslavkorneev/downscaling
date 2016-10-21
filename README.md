@@ -30,11 +30,12 @@ Public image name is downscaling_code_Korneev_Battiato.
 
 Compilation of the parallel Cython library.
 
-#Translateto C code
+Translateto C code
 cython downscale.pyx
-#Compile the C code with OpenMP
-#and output the compiled sharedlibrary
-#which can be imported from the Python
+
+Compile the C code with OpenMP
+and output the compiled sharedlibrary
+which can be imported from the Python
 gcc −fPIC −fopenmp −shared −o downscale.so downscale.c \
 −I /home/ubuntu/anaconda2/include/python2.7/
 
