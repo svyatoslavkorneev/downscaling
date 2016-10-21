@@ -26,7 +26,7 @@ pre-configured environment which allows to deploy Amazon EC2 computing
 instance and run the code withing a minute. The image also includes operating
 system Ubuntu 14.04.5 LTS, all required Python libraries and Anaconda. After
 the computing instance is initialized, the downscaling code is ready to run.
-Public image name is #downscaling_code_Korneev_Battiato.
+Public image name is downscaling_code_Korneev_Battiato.
 
 Compilation of the parallel Cython library.
 
