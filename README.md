@@ -19,4 +19,4 @@ the maximum information regarding the unresolved porosity, then extract the
 multi-scale pore distribution by segmentation of the void space of the binary
 image on interconnected void regions bounded by the solid phase.
 
-User's manual is located in the file Manual.pdf
+The complete user's manual is located in the file Manual.pdf
