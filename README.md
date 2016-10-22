@@ -41,7 +41,7 @@ gcc −fPIC −fopenmp −shared −o downscale.so downscale.c \
 
 The main Python program process_downscale.py reads TIFF images
 from the folder Images, inverts the color and scales the intensity to [0:1], where
-0 is pure black and 1 is pure white (see 1). The average intensity value of the
+0 is pure black and 1 is pure white. The average intensity value of the
 solid phase has to be less then the average value of the void phase. The program
 also read TIFF files with the mask from the folder Mask, where the area of the
 interest is masked by pure white and the area outside by pure black. The intensity 
@@ -50,7 +50,7 @@ where each value has a separate line.
 
 The Python program outputs the extracted pore area measurements to the
 text file inside the folder Regions, where the area is measured in pixels. The
-downscaled binary TIFF images (see Fig. 4) are written to the folder Downscale.
+downscaled binary TIFF images are written to the folder Downscale.
 Porosity for every image and other useful information is written to the
 terminal.
 
