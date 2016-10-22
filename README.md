@@ -39,6 +39,39 @@ which can be imported from the Python
 gcc −fPIC −fopenmp −shared −o downscale.so downscale.c \
 −I /home/ubuntu/anaconda2/include/python2.7/
 
+The main Python program process_downscale.py reads TIFF images
+from the folder Images, inverts the color and scales the intensity to [0:1], where
+0 is pure black and 1 is pure white (see 1). The average intensity value of the
+solid phase has to be less then the average value of the void phase. The program
+also read TIFF files with the mask from the folder Mask, where the area of the
+interest is masked by pure white and the area outside by pure black. The intensity 
+of the solid and void phases are taken from the text file from the folder x1x2,
+where each value has a separate line.
+
+The Python program outputs the extracted pore area measurements to the
+text file inside the folder Regions, where the area is measured in pixels. The
+downscaled binary TIFF images (see Fig. 4) are written to the folder Downscale.
+Porosity for every image and other useful information is written to the
+terminal.
+
+The main function of the Python program is
+
+imagedown, regprop, fi, logstr = downscale(image, mask, scale, x1, x2),
+
+where image is the 2D array of float numbers. Each element of the array stores
+the image pixel intensity. Average intensity value for the solid phase has to be
+less than for the void phase. Input variable mask is 2D array of type integer.
+It is filled with values 0 or 1, where value 1 masks the area of the interest. The
+value of the integer variable scale defines the resolution of the downscaled image
+with respect to the resolution of the original image. Values of the float variables
+x1 and x2 define the intensity of the void and solid phases, respectively. The
+function output 2D integer array, where each element stores the value of the
+pixel intensity. Value 1 of the array corresponds to the void phase and value 0
+to the solid phase. The function also output the skimage object with the list of
+properties of labeled regions, where each region correspond to a single pore. It
+also outputs the value of porosity and the string variable with the useful tech-
+nical information. After the downscaling, the extracted regions properties can
+be measured, for example region area, by using skimage library.
 
 Example of the output of the program process_downscale.py, where
 the string image shows the name of the downscaled image, delta is the half of the
