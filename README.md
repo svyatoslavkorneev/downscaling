@@ -20,3 +20,7 @@ multi-scale pore distribution by segmentation of the void space of the binary
 image on interconnected void regions bounded by the solid phase.
 
 The complete user's manual is located in the file Manual.pdf
+
+Required Python libraries:
+
+PIL, numpy, scipy, skimage, os, multiprocessing, ctypes
